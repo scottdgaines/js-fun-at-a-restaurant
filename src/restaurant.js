@@ -20,12 +20,12 @@ function addMenuItem(pizzaRestaurant, newItem) {
     pizzaRestaurant.menus.dinner.push(newItem)
   }
 }
-
+// incomplete
 function removeMenuItem(pizzaRestaurant, item, menu) {
   var result = `No one is eating our ${item} - it has been removed from the ${menu} menu!`
     for (var i = 0; i < pizzaRestaurant.menus.length; i++) {
-      if (item === pizzaRestaurant.menus.breakfast.name) {
-        pizzaRestaurant.menus.breakfast[0].splice(i, 0)
+      if (item === pizzaRestaurant.menus.breakfast[i].name[i]) {
+      console.log("hi")
       }
     }
 }
