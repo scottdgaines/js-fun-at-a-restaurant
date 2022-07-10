@@ -20,15 +20,18 @@ function addMenuItem(pizzaRestaurant, newItem) {
     pizzaRestaurant.menus.dinner.push(newItem)
   }
 }
-// incomplete
+
 function removeMenuItem(pizzaRestaurant, item, menu) {
   var result = `No one is eating our ${item} - it has been removed from the ${menu} menu!`
-    for (var i = 0; i < pizzaRestaurant.menus.length; i++) {
-      if (item === pizzaRestaurant.menus.breakfast[i].name[i]) {
-      console.log("hi")
+    for (var i = 0; i < pizzaRestaurant.menus[menu].length; i++) {
+      if (pizzaRestaurant.menus[menu][i].name.includes(item)) {
+        pizzaRestaurant.menus[menu].shift(i);
+        return result;
       }
     }
+    return `Sorry, we don't sell ${item}, try adding a new recipe!`
 }
+
 module.exports = {
   createRestaurant,
   addMenuItem,
